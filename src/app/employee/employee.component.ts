@@ -12,4 +12,5 @@ export class EmployeeComponent
     lastName: string = 'Hopkins';
     gender: string = 'Male';
     age: number = 20;
+   
 }
