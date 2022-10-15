@@ -17,10 +17,10 @@
     </thead>
     <tbody>
         <tr *ngFor='let employee of employees;trackBy:trackNyEmployeeCode;let i=index;let isFirst=first;let isLast=last;let isEven=even;let isOdd=odd' >
-              <td>{{employee.code}}</td>
-              <td>{{employee.name}}</td>
+              <td>{{employee.code | uppercase}}</td>
+              <td>{{employee.name | EmployeeTitle:employee.gender }}</td>
               <td>{{employee.gender}}</td>
-              <td>{{employee.annualSalary}}</td>
+              <td>{{employee.annualSalary | currency }}</td>
               <td>{{employee.dateOfBirth}}</td>
               <td>{{i}}</td>
               <td>{{isFirst}}</td>
