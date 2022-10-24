@@ -5,11 +5,13 @@ import {FormsModule} from '@angular/forms'
 
 import { AppComponent } from './app.component';
 import { EmployeelistComponent } from './employeelist/employeelist.component';
-import { employeeTitlePipe } from './employee/employeeTitle.pipe'
+import {EmployeeCountComponent} from './employeeCount/EmployeeCount.Component'
+import { employeeTitlePipe } from './employee/employeeTitle.pipe';
+
 
 @NgModule({
   declarations: [
-    AppComponent, EmployeeComponent, EmployeelistComponent,employeeTitlePipe
+    AppComponent, EmployeeComponent, EmployeelistComponent,employeeTitlePipe,EmployeeCountComponent
   ],
   imports: [
     BrowserModule, FormsModule

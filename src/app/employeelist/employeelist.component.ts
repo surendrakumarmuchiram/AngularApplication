@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EmployeelistComponent implements OnInit {
   employees:any[]=[];
+  selectedEmployeeCountRadioButton: string = 'All';
   constructor() { 
      this.employees = [
       {
@@ -14,7 +15,7 @@ export class EmployeelistComponent implements OnInit {
         annualSalary: 5500, dateOfBirth: '25/6/1988'
     },
     {
-        code: 'emp102', name: 'Alex', gender: 'Male',
+        code: 'emp102', name: 'Alex', gender: 'Female',
         annualSalary: 5700.95, dateOfBirth: '9/6/1982'
     },
     {
@@ -24,7 +25,11 @@ export class EmployeelistComponent implements OnInit {
     {
         code: 'emp104', name: 'Mary', gender: 'Female',
         annualSalary: 6500.826, dateOfBirth: '14/10/1980'
-    }
+    },
+    {
+      code: 'emp105', name: 'Surendra', gender: 'Male',
+      annualSalary: 600.826, dateOfBirth: '08/10/1992'
+  }
     ]
 
   }
@@ -52,6 +57,26 @@ export class EmployeelistComponent implements OnInit {
       annualSalary: 600.826, dateOfBirth: '08/10/1992'
   }
     ]
+  }
+
+  getTotalEmployeesCount():number
+  {
+       return this.employees.length;
+  }
+
+  getMaleEmployeesCount():number
+  {
+      return this.employees.filter(e=>e.gender === 'Male') .length;
+  }
+
+  getFemaleEmployeesCount():number
+  {
+    return this.employees.filter(e=>e.gender === 'Female') .length;
+  }
+
+  onEmployeeCountRadioButtonChange(selectedRadioButtonValue: string):void 
+  {
+    this.selectedEmployeeCountRadioButton = selectedRadioButtonValue
   }
 
   trackNyEmployeeCode(index:number,employee:any):string
